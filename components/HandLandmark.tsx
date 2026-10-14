@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { Camera, CameraOff, LoaderCircle } from "lucide-react";
 import {
     DrawingUtils,
     FilesetResolver,
@@ -192,10 +193,10 @@ function HandLandmark({ position = "bottom-right", SkeletonColor, DotColor, size
 
     return (
         <main
-            className="relative min-h-screen w-full overflow-hidden bg-black"
+            className="relative min-h-screen w-full overflow-hidden bg-[#090a0c]"
         >
             <div
-                className={`absolute z-10 aspect-video w-[min(24rem,calc(100vw-2rem))] overflow-hidden rounded-2xl border border-white/15 bg-slate-950 shadow-2xl shadow-black/50 sm:w-[min(28rem,calc(100vw-3rem))] ${cameraPositionClasses[position]}`}
+                className={`absolute z-10 aspect-video w-[min(24rem,calc(100vw-2rem))] overflow-hidden rounded-2xl border border-white/[0.09] bg-[#0e1012] shadow-2xl shadow-black/50 sm:w-[min(28rem,calc(100vw-3rem))] ${cameraPositionClasses[position]}`}
             >
                 <video
                     ref={videoRef}
@@ -212,21 +213,46 @@ function HandLandmark({ position = "bottom-right", SkeletonColor, DotColor, size
                     className={`absolute inset-0 size-full object-cover ${isCameraRunning ? "scale-x-[-1]" : "hidden"
                         }`}
                 />
+                {!isCameraRunning && (
+                    <div className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center">
+                        <CameraOff className="mb-3 size-7 text-[#59c596]" aria-hidden="true" />
+                        <p className="text-sm font-medium text-[#f2f3f4]">Camera is off</p>
+                        <p className="mt-1 text-xs text-[#92969b]">
+                            {isModelReady
+                                ? "Press the camera button to start"
+                                : "Hand tracking is loading"}
+                        </p>
+                    </div>
+                )}
+                <button
+                    type="button"
+                    onClick={toggleCamera}
+                    disabled={isCameraStarting}
+                    aria-label={
+                        isCameraStarting
+                            ? "Starting camera"
+                            : isCameraRunning
+                                ? "Turn camera off"
+                                : "Turn camera on"
+                    }
+                    title={
+                        isCameraStarting
+                            ? "Starting camera"
+                            : isCameraRunning
+                                ? "Turn camera off"
+                                : "Turn camera on"
+                    }
+                    className="absolute right-3 top-3 z-20 flex size-10 items-center justify-center rounded-full border border-white/10 bg-[#101311]/90 text-white shadow-lg backdrop-blur transition hover:border-[#59c596]/40 hover:bg-[#171c19] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#59c596] disabled:cursor-wait disabled:opacity-70"
+                >
+                    {isCameraStarting ? (
+                        <LoaderCircle className="size-4 animate-spin text-[#59c596]" aria-hidden="true" />
+                    ) : isCameraRunning ? (
+                        <CameraOff className="size-4 text-[#d1d5d8]" aria-hidden="true" />
+                    ) : (
+                        <Camera className="size-4 text-[#59c596]" aria-hidden="true" />
+                    )}
+                </button>
             </div>
-            <button
-                type="button"
-                onClick={toggleCamera}
-                disabled={isCameraStarting}
-                className="absolute bottom-6 left-1/2 z-20 -translate-x-1/2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-black shadow-lg transition hover:bg-slate-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black disabled:cursor-wait disabled:opacity-60"
-            >
-                {isCameraRunning
-                    ? "Disable camera"
-                    : isCameraStarting
-                        ? "Starting camera..."
-                        : isModelReady
-                            ? "Enable camera"
-                            : "Enable camera (tracking loading)"}
-            </button>
         </main>
     );
 }
