@@ -17,7 +17,7 @@ interface HandLandmarkProps {
     size: number;
 }
 
-function HandLandmark({ position = "bottom-right", SkeletonColor, DotColor, size
+function HandLandMark({ position = "bottom-right", SkeletonColor, DotColor, size
 }: HandLandmarkProps) {
     const videoRef = useRef<HTMLVideoElement>(null);
     const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -257,4 +257,4 @@ function HandLandmark({ position = "bottom-right", SkeletonColor, DotColor, size
     );
 }
 
-export default HandLandmark;
+export default HandLandMark;

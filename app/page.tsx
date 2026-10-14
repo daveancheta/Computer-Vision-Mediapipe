@@ -1,8 +1,8 @@
-import HandLandmark from "@/components/HandLandmark";
+import HandLandMark from "@/components/HandLandMark";
 
 export default function Home() {
   return (
-    <HandLandmark
+    <HandLandMark
       position="top-right"
       SkeletonColor="#55e6c1"
       DotColor="#f8fafc"
