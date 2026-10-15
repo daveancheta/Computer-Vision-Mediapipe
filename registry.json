@@ -1,0 +1,9 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "my-ui",
+  "homepage": "https://your-domain.com",
+  "include": [
+    "components/face-detection/registry.json",
+    "components/hand-land-mark/registry.json"
+  ]
+}

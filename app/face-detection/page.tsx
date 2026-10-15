@@ -1,4 +1,4 @@
-import FaceDetection from "@/components/FaceDetection";
+import FaceDetection from "@/components/face-detection/FaceDetection";
 
 export default function Home() {
     return (

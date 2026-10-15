@@ -1,0 +1,17 @@
+{
+  "items": [
+    {
+      "name": "hand-land-mark",
+      "type": "registry:ui",
+      "title": "Hand Land Mark",
+      "description": "Hand Land Mark using MediaPipe Tasks Vision.",
+      "dependencies": ["@mediapipe/tasks-vision"],
+      "files": [
+        {
+          "path": "hand-land-mark.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    }
+  ]
+}

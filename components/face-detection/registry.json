@@ -1,0 +1,17 @@
+{
+  "items": [
+    {
+      "name": "face-detection",
+      "type": "registry:ui",
+      "title": "Face Detection",
+      "description": "Face detection using MediaPipe Tasks Vision.",
+      "dependencies": ["@mediapipe/tasks-vision"],
+      "files": [
+        {
+          "path": "face-detection.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    }
+  ]
+}
