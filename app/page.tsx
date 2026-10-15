@@ -1,5 +1,9 @@
 import Link from "next/link";
-import { ArrowUpRight, Hand, ScanFace } from "lucide-react";
+import { ArrowUpRight, Hand, LockKeyhole, ScanFace } from "lucide-react";
+import { connection } from "next/server";
+import registry from "../registry.json";
+
+export const instant = false;
 
 const visionTools = [
   {
@@ -20,7 +24,61 @@ const visionTools = [
   },
 ];
 
-export default function Home() {
+export default async function Home() {
+  await connection();
+
+  const isRestricted = process.env.NEXT_PUBLIC_ACCESS === "RESTRICT";
+
+  if (isRestricted) {
+    return (
+    <main className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#090a0c] px-6 py-16 text-[#f2f3f4]">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute left-1/2 top-1/2 size-[34rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-rose-500/[0.07] blur-[120px]"
+      />
+
+      <section className="relative w-full max-w-lg rounded-3xl border border-white/[0.09] bg-[#0e1012]/90 p-8 shadow-2xl shadow-black/40 backdrop-blur sm:p-10">
+        <div className="mb-8 flex items-center justify-between">
+          <span className="text-sm font-semibold tracking-wide">Vision Lab</span>
+          <span className="rounded-full border border-rose-300/20 bg-rose-300/[0.08] px-3 py-1 text-[11px] font-medium uppercase tracking-[0.16em] text-rose-200">
+            Restricted
+          </span>
+        </div>
+
+        <div className="mb-6 flex size-14 items-center justify-center rounded-2xl border border-rose-300/15 bg-rose-300/[0.08]">
+          <LockKeyhole className="size-6 text-rose-200" aria-hidden="true" />
+        </div>
+
+        <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#92969b]">
+          Access unavailable
+        </p>
+        <h1 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
+          You don&apos;t have access here.
+        </h1>
+        <p className="mt-4 text-sm leading-6 text-[#a6abb0]">
+          This vision lab is currently restricted. If you think you should be
+          able to access it, please contact the site owner.
+        </p>
+
+        <a
+          href={registry.homepage}
+          target="_blank"
+          rel="noreferrer"
+          className="mt-8 inline-flex h-11 w-full items-center justify-center gap-2 rounded-xl bg-[#f2f3f4] px-5 text-sm font-semibold text-[#101214] transition hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-200 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0e1012]"
+        >
+          Visit the project repository
+          <ArrowUpRight className="size-4" aria-hidden="true" />
+        </a>
+
+        <p className="mt-6 border-t border-white/[0.08] pt-5 text-xs leading-5 text-[#737a80]">
+          If you believe this is a mistake, ask the project owner to review your
+          access.
+        </p>
+      </section>
+    </main>
+    );
+  }
+
   return (
     <main className="min-h-screen bg-[#090a0c] text-[#f2f3f4]">
       <header className="border-b border-white/[0.08]">
