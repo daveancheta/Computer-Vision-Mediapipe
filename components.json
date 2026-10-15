@@ -21,5 +21,7 @@
   },
   "menuColor": "default",
   "menuAccent": "subtle",
-  "registries": {}
+  "registries": {
+    "@krave": "https://computer-vision-mediapipe.vercel.app/r/{name}.json"
+  }
 }
