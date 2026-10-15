@@ -8,7 +8,7 @@
       "dependencies": ["@mediapipe/tasks-vision"],
       "files": [
         {
-          "path": "face-detection.tsx",
+          "path": "FaceDetection.tsx",
           "type": "registry:ui"
         }
       ]

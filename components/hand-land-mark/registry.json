@@ -8,7 +8,7 @@
       "dependencies": ["@mediapipe/tasks-vision"],
       "files": [
         {
-          "path": "hand-land-mark.tsx",
+          "path": "HandLandMark.tsx",
           "type": "registry:ui"
         }
       ]
