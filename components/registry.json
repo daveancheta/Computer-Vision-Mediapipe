@@ -15,7 +15,7 @@
       ]
     },
     {
-      "name": "hand-landmark",
+      "name": "hand-land-mark",
       "type": "registry:ui",
       "dependencies": [
         "@mediapipe/tasks-vision"
