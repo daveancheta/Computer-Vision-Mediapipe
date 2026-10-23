@@ -4,6 +4,9 @@
     {
       "name": "face-detection",
       "type": "registry:ui",
+      "dependencies": [
+        "@mediapipe/tasks-vision"
+      ],
       "files": [
         {
           "path": "FaceDetection.tsx",
@@ -14,6 +17,9 @@
     {
       "name": "hand-landmark",
       "type": "registry:ui",
+      "dependencies": [
+        "@mediapipe/tasks-vision"
+      ],
       "files": [
         {
           "path": "HandLandMark.tsx",
