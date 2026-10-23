@@ -1,10 +1,8 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
-  "name": "my-ui",
-  "description": "A professional collection of reusable, real-time computer vision components powered by MediaPipe. Designed for seamless integration into modern web applications, these components provide a foundation for interactive visual experiences with clear APIs, responsive interfaces, and efficient on-device processing.",
-  "homepage": "https://github.com/daveancheta/Computer-Vision-Mediapipe",
+  "name": "krave-docs",
+  "homepage": "https://krave-docs.vercel.app",
   "include": [
-    "components/face-detection/registry.json",
-    "components/hand-land-mark/registry.json"
+    "components/registry.json"
   ]
 }

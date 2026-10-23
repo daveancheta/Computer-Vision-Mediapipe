@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "items": [
+    {
+      "name": "face-detection",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "FaceDetection.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "hand-landmark",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "HandLandMark.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    }
+  ]
+}
