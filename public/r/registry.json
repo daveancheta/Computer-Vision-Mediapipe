@@ -5,6 +5,9 @@
   "items": [
     {
       "name": "face-detection",
+      "dependencies": [
+        "@mediapipe/tasks-vision"
+      ],
       "files": [
         {
           "path": "components/FaceDetection.tsx",
@@ -15,6 +18,9 @@
     },
     {
       "name": "hand-landmark",
+      "dependencies": [
+        "@mediapipe/tasks-vision"
+      ],
       "files": [
         {
           "path": "components/HandLandMark.tsx",

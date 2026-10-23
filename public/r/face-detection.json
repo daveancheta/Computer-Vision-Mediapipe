@@ -1,6 +1,9 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "face-detection",
+  "dependencies": [
+    "@mediapipe/tasks-vision"
+  ],
   "files": [
     {
       "path": "components/FaceDetection.tsx",

@@ -1,6 +1,9 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "hand-landmark",
+  "dependencies": [
+    "@mediapipe/tasks-vision"
+  ],
   "files": [
     {
       "path": "components/HandLandMark.tsx",
