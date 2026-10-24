@@ -12,12 +12,12 @@ type CameraPosition = "top-left" | "top-right" | "bottom-left" | "bottom-right";
 
 interface HandLandmarkProps {
     position?: CameraPosition;
-    SkeletonColor: string;
-    DotColor: string;
+    skeletonColor: string;
+    dotColor: string;
     size: number;
 }
 
-function HandLandMark({ position = "bottom-right", SkeletonColor, DotColor, size
+function HandLandMark({ position = "bottom-right", skeletonColor, dotColor, size
 }: HandLandmarkProps) {
     const videoRef = useRef<HTMLVideoElement>(null);
     const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -173,11 +173,11 @@ function HandLandMark({ position = "bottom-right", SkeletonColor, DotColor, size
                 drawingUtils.drawConnectors(
                     landmarks,
                     HandLandmarker.HAND_CONNECTIONS,
-                    { color: SkeletonColor, lineWidth: size },
+                    { color: skeletonColor, lineWidth: size },
                 );
                 drawingUtils.drawLandmarks(landmarks, {
-                    color: DotColor,
-                    fillColor: DotColor,
+                    color: dotColor,
+                    fillColor: dotColor,
                     lineWidth: 1,
                     radius: size,
                 });

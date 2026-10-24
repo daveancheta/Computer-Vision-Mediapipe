@@ -4,8 +4,8 @@ export default function Home() {
   return (
     <HandLandMark
       position="top-right"
-      SkeletonColor="#55e6c1"
-      DotColor="#f8fafc"
+      skeletonColor="#55e6c1"
+      dotColor="#f8fafc"
       size={4}
     />
   );
