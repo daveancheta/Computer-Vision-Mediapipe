@@ -15,14 +15,27 @@
       ]
     },
     {
-      "name": "hand-land-mark",
+      "name": "hand-land-marker",
       "type": "registry:ui",
       "dependencies": [
         "@mediapipe/tasks-vision"
       ],
       "files": [
         {
-          "path": "HandLandMark.tsx",
+          "path": "HandLandMarker.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+     {
+      "name": "face-land-marker",
+      "type": "registry:ui",
+      "dependencies": [
+        "@mediapipe/tasks-vision"
+      ],
+      "files": [
+        {
+          "path": "FaceLandMarker.tsx",
           "type": "registry:ui"
         }
       ]

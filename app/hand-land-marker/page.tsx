@@ -1,4 +1,4 @@
-import HandLandMark from "@/components/HandLandMark";
+import HandLandMark from "@/components/HandLandMarker";
 
 export default function Home() {
   return (
