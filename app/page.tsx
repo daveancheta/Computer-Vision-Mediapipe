@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUpRight, Hand, LockKeyhole, ScanFace } from "lucide-react";
+import { ArrowUpRight, Hand, LockKeyhole, ScanFace, Scan } from "lucide-react";
 import { connection } from "next/server";
 import registry from "../registry.json";
 
@@ -13,6 +13,14 @@ const visionTools = [
     icon: ScanFace,
     accent: "text-sky-300",
     border: "hover:border-sky-300/40",
+  },
+  {
+    title: "Face landmarks",
+    description: "Track facial landmarks and expressions live from your camera.",
+    href: "/face-land-marker",
+    icon: Scan,
+    accent: "text-cyan-300",
+    border: "hover:border-cyan-300/40",
   },
   {
     title: "Hand landmarks",
